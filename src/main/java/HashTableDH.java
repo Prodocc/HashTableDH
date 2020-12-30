@@ -199,7 +199,6 @@ public class HashTableDH<K, V> implements Map<K, V> {
         Bucket[] newBuckets = new Bucket[size];
         for (int i = 0; i < size; i++) {
             if (buckets[i] != null && !buckets[i].isDeleted()) {
-                System.out.println(buckets[i].key + " in REHASH");
                 int hashVal = hash1(buckets[i].getKey(), size);
                 int stepSize = hash2(buckets[i].getKey(), size);
                 while (newBuckets[hashVal] != null) {
